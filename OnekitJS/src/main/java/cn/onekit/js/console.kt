@@ -5,7 +5,7 @@ import java.lang.StringBuilder
 
 open class console() {
     companion object {
-        fun log(vararg args: Any) {
+        fun log(vararg args: Any?) {
             val sb = StringBuilder();
             for (arg in args) {
                 sb.append("${arg}\t")

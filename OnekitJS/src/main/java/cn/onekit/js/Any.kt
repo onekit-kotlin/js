@@ -48,3 +48,17 @@ fun Any.got(memberName:Any?):Any? {
         }
     }
 }
+/////////////////////////////
+
+ fun Any.onekit_plus(y: Any?) :Any?{
+    return (this as Number).toDouble()+(y as Number).toDouble()
+}
+ fun Any.onekit_minus(y: Any?): Any? {
+     return (this as Number).toDouble()-(y as Number).toDouble()
+}
+ fun Any.onekit_times(y: Any?): Any? {
+     return (this as Number).toDouble()*(y as Number).toDouble()
+}
+ fun Any.onekit_div(y: Any?): Any? {
+     return (this as Number).toDouble()/(y as Number).toDouble()
+}

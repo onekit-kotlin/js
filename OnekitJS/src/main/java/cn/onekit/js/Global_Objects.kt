@@ -11,6 +11,14 @@ fun isNaN(value:Any?):Boolean {
     return result== NaN
 }
 ///////////////////////
+fun eval(exp:String):Any?{
+    return null //js(exp)
+}
+///////////////////////
+fun isFinite(testValue:Any?):Boolean{
+    return testValue is Number && testValue.toDouble()== Infinity
+}
+///////////////////////
 fun typeOf(value:Any?):String {
     if (value == null) {
         return "null";
