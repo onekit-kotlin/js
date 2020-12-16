@@ -9,24 +9,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ////////////////////
-        console.log(Infinity          ); /* cn.onekit.js.getInfinity */
-        console.log(Infinity + 1      ); /* cn.onekit.js.getInfinity */
-        console.log(Math.pow(10.0, 1000.0)); /* cn.onekit.js.getInfinity */
-        console.log(Math.log(0.0)       ); /* -cn.onekit.js.getInfinity */
-        console.log(1 / Infinity      ); /* 0 */
-        //////////////////
-        fun sanitise(x:Any) :Any{
-            if (isNaN(x)) {
-                return NaN;
+        val test = object : function {
+            override fun invoke(vararg arguments: Any?): Any? {
+                val a = arguments.got(0)
+                console.log(typeOf(a));    // undefined
+                return a;
             }
-            return x;
         }
-
-        console.log(sanitise("1"));
-// expected output: "1"
-
-        console.log(sanitise("NotANumber"));
-// expected output: NaN
+        test.invoke()                       // 返回"undefined"
 
     }
 }
