@@ -4,8 +4,7 @@ import android.util.Log
 import java.lang.StringBuilder
 import java.util.*
 
-open class console() {
-    companion object {
+open class Console() {
         fun log(vararg args: Any?) {
             val sb = StringBuilder();
             sb.append(String.format("%d\n",Date().time ))
@@ -14,5 +13,5 @@ open class console() {
             }
             Log.e("[ONEKIT]===============", sb.toString())
         }
-    }
+
 }

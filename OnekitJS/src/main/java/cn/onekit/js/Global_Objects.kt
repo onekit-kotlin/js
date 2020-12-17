@@ -72,3 +72,5 @@ fun typeOf(value:Any?):String {
     }
     return value.javaClass.simpleName
 }
+/////////////////
+val console = Console()
