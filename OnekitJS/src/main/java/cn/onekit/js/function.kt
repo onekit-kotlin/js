@@ -2,7 +2,7 @@ package cn.onekit.js
 
 import java.lang.reflect.Method
 
-open interface function {
+ open interface function {
    /* private lateinit var _method: Method
     private lateinit var _obj: Any
 

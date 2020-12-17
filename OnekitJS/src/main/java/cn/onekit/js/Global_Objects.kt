@@ -6,11 +6,12 @@ import java.net.URLEncoder
 
 val Infinity = Double.POSITIVE_INFINITY
 val NaN = Double.NaN
-class undefined{
+ class Undefined{
     override fun toString(): String {
         return "undefined"
     }
 }
+val undefined = Undefined();
 ///////////////////////
 fun eval(exp:String):Any?{
     return null //js(exp)

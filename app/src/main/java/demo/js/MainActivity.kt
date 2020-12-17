@@ -3,24 +3,25 @@ package demo.js
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cn.onekit.js.*
+import cn.onekit.js.console
+
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ////////////////////
-        function circumference(r) {
-            return parseFloat(r) * 2.0 * Math.PI;
-        }
+        val test = object : function { override operator fun invoke(vararg arguments:Any?): Any? {
+            val t = arguments[0]
+            if(fullequals(t,undefined)){
+                return "Undefined value!"
+            }
+            return t
+        }}
+        val x = undefined
+        console.log(test(x))
 
-        console.log(circumference(4.567));
-// expected output: 28.695307297889173
-
-        console.log(circumference('4.567abcdefgh'));
-// expected output: 28.695307297889173
-
-        console.log(circumference('abcdefgh'));
-// expected output: NaN
 
 
     }

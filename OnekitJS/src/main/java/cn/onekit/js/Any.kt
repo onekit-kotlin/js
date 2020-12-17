@@ -1,22 +1,23 @@
 package cn.onekit.js
 
+/*
 fun Any.got(memberName:Any?):Any? {
     when (this) {
         is Array<*> -> {
             val array = this
             return if (memberName is Number) {
                 if(array.size<=0){
-                    undefined()
+                    Undefined()
                 }else {
                     val index = memberName.toInt()
                     if (index >= 0 || index < array.size) {
                         array[index]
                     } else {
-                        undefined()
+                        Undefined()
                     }
                 }
             } else {
-                undefined()
+                Undefined()
             }
         }
         is Map<*, *> -> {
@@ -26,10 +27,10 @@ fun Any.got(memberName:Any?):Any? {
                 if (map.containsKey(key)) {
                     map[key]
                 } else {
-                    undefined()
+                    Undefined()
                 }
             } else {
-                undefined()
+                Undefined()
             }
         }
         else -> {
@@ -44,21 +45,45 @@ fun Any.got(memberName:Any?):Any? {
                     return method
                 }
             }
-            return undefined()
+            return Undefined()
         }
     }
-}
+}*/
 /////////////////////////////
-
- fun Any.onekit_plus(y: Any?) :Any?{
-    return (this as Number).toDouble()+(y as Number).toDouble()
+fun fullequals(x:Any?,y: Any?) :Boolean {
+    if (x == null && y == null) {
+        return true;
+    }
+    if (x != null && y == null) {
+        return false;
+    }
+    if (x == null && y != null) {
+        return false;
+    }
+    return x!!.javaClass.name.equals(y!!.javaClass.name)
+            && x.equals(y)
 }
- fun Any.onekit_minus(y: Any?): Any? {
-     return (this as Number).toDouble()-(y as Number).toDouble()
+fun equals(x:Any?,y: Any?) :Boolean {
+    if (x == null && y == null) {
+        return true;
+    }
+    if (x != null && y == null) {
+        return false;
+    }
+    if (x == null && y != null) {
+        return false;
+    }
+    return x!!.equals(y)
 }
- fun Any.onekit_times(y: Any?): Any? {
-     return (this as Number).toDouble()*(y as Number).toDouble()
+ fun plus(x:Any?,y: Any?) :Any{
+    return (x as Number).toDouble()+(y as Number).toDouble()
 }
- fun Any.onekit_div(y: Any?): Any? {
-     return (this as Number).toDouble()/(y as Number).toDouble()
+ fun minus(x:Any?,y: Any?): Any {
+     return (x as Number).toDouble()-(y as Number).toDouble()
+}
+ fun times(x:Any?,y: Any?): Any {
+     return (x as Number).toDouble()*(y as Number).toDouble()
+}
+ fun div(x:Any?,y: Any?): Any {
+     return (x as Number).toDouble()/(y as Number).toDouble()
 }
